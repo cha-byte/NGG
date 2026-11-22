@@ -16,19 +16,19 @@ attempts = 7
 print(" I have picked a random number 🤫. Now it is your turn to guess it.")
 
 
-while True:
-    try:
-        Guzd_num = int(input("Enter ur guzz: "))
+while attempts > 0 :
 
-        if Guzd_num < 1 or Guzd_num > 100:
-            print("U only have ur choice from 1 to 100. Not more or less than that 🤡")
-        else:
-            break
+    while True:
+        try:
+            Guzd_num = int(input("Enter ur guzz: "))
 
-    except ValueError:
-        print("Are you dumb! Please enter an inteeegerrrr 🧐.")
+            if Guzd_num < 1 or Guzd_num > 100:
+                print("U only have ur choice from 1 to 100. Not more or less than that 🤡")
+            else:
+                break
 
-while Guzd_num != Rand_num or attempts != 0 :
+        except ValueError:
+            print("Are you dumb! Please enter an inteeegerrrr 🧐.")
 
     
     if Guzd_num > Rand_num :
@@ -42,20 +42,6 @@ while Guzd_num != Rand_num or attempts != 0 :
 
     attempts = attempts-1
     print("Heheheehe 😏")
-    if attempts != 0 :
-        print("You have only",attempts,"/7 left.")
-        while True:
-            try:
-                Guzd_num = int(input("Try ur nxt gzz 😏: "))
-
-                if Guzd_num < 1 or Guzd_num > 100:
-                    print("U only have ur choice from 1 to 100 🤡")
-                else:
-                    break
-
-            except ValueError:
-                print("Are you dumb! Please enter an inteeegerrrr 🧐.")
-    else : 
-        break
-if attempts == 0 and Guzd_num != Rand_num :
+    
+if attempts == 0:
     print("HAHAHAHA 🤪. I WON. You LOSE.")

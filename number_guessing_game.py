@@ -1,4 +1,5 @@
 import random
+import os
 
 print("HLOOOO !!!!")
 print("WELCOME TO NGG 😃")
@@ -9,39 +10,58 @@ print("3. Then, you r gonna guess a number which will be checked if u guessed it
 print("4. If you guessed it right within 7 attempts, then u won the game. Or u lose.\n\n\n")
 print("                     LET'S  START  THE  GAME !!!!                                      ")
 
-Rand_num= random.randint( 1, 100)
+while True :
 
-attempts = 7
+    os.system('clear')
 
-print(" I have picked a random number 🤫. Now it is your turn to guess it.")
+    Rand_num= random.randint( 1, 100)
+
+    attempts = 7
+
+    print(" I have picked a random number 🤫. Now it is your turn to guess it.")
 
 
-while attempts > 0 :
+    while attempts > 0 :
+
+        while True:
+            try:
+                Guzd_num = int(input("Enter ur guzz: "))
+
+                if Guzd_num < 1 or Guzd_num > 100:
+                    print("U only have ur choice from 1 to 100. Not more or less than that 🤡")
+                else:
+                    break
+
+            except ValueError:
+                print("Are you dumb! Please enter an inteeegerrrr 🧐.")
+
+        
+        if Guzd_num > Rand_num :
+            print(" 😈 Too High. Try your nxt gzz.")
+        elif Guzd_num < Rand_num : 
+            print(" 😈 Too Low. Try your nxt gzz.")
+        else : 
+            print(" AAAAHHHHHHHH!!! ")
+            print("You guessed it. Congratulations 😒")
+            break
+
+        attempts = attempts-1
+        print("Attempts Left :",attempts,"/7")
+        
+        
+    if attempts == 0:
+        print("Heheheehe 😏")
+        print("HAHAHAHA 🤪. I WON. You LOSE.")
+        
 
     while True:
-        try:
-            Guzd_num = int(input("Enter ur guzz: "))
+        play_again = input("Wanna play again ? (Yes / No)").lower()
 
-            if Guzd_num < 1 or Guzd_num > 100:
-                print("U only have ur choice from 1 to 100. Not more or less than that 🤡")
-            else:
-                break
-
-        except ValueError:
-            print("Are you dumb! Please enter an inteeegerrrr 🧐.")
-
-    
-    if Guzd_num > Rand_num :
-        print(" 😈 Too High. Try your nxt gzz.")
-    elif Guzd_num < Rand_num : 
-        print(" 😈 Too Low. Try your nxt gzz.")
-    else : 
-        print(" AAAAHHHHHHHH!!! ")
-        print("You guessed it. Congratulations 😒")
-        break
-
-    attempts = attempts-1
-    print("Heheheehe 😏")
-    
-if attempts == 0:
-    print("HAHAHAHA 🤪. I WON. You LOSE.")
+        if play_again == "yes" :
+            print("Welcome Back ")
+            break
+        elif play_again == "no" :
+            print("Enjoyed Playing With You. Byeeeee !!!")
+            exit()
+        else : 
+            print("Enter either yes or no !")
